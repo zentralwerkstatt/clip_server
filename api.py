@@ -10,7 +10,8 @@ from io import BytesIO
 import PIL
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/fabian/clip_server/db.db'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:////home/fabian/clip_server/db.db'
 db = SQLAlchemy(app)
 
 class Embeddings(db.Model): 
