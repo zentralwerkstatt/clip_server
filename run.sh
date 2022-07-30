@@ -1,1 +1,1 @@
-gunicorn -b 0.0.0.0:${1:-5001} api:app
+gunicorn -b 0.0.0.0:${1:-5001} --workers 4 api:app
