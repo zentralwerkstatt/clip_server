@@ -30,6 +30,7 @@ def get():
                 return make_response("Embedding not found and not created", 404)
     else:
         embedding = q.embedding
+    print(url)
     return jsonify({"url": url, "embedding": embedding})
 
 @app.route('/api/query/', methods=['GET', 'POST'])
