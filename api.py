@@ -17,7 +17,6 @@ def get():
     q = Embeddings.query.filter_by(url=url).first()
     if q is None: # If URL not in database
         if "embedding" in request.json: # If embedding provided
-            print("Provided")
             embedding = request.json["embedding"]
             db.session.add(Embeddings(url=url, embedding=embedding))
             db.session.commit() 
